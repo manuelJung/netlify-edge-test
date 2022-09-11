@@ -4,10 +4,10 @@
 export default async (request: Request, context: any) => {
   let [,host, pathname] = request.url.match(/(https?:\/\/[^\/]*)(.*)/)!
 
-  if(pathname.includes('/content-b')) return
+  if(request.url.includes('/content-b')) return
   
   // /script.js -> /content-b/script.js
-  const bUrl = request.url.replace(host, '/content-b' + pathname)
+  const bUrl = request.url.replace(host, host + '/content-b')
 
   return context.rewrite(bUrl)
 };

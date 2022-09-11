@@ -1,0 +1,13 @@
+[build]
+  publish = "public/"
+
+[[edge_functions]]
+  path = "/*"
+  function = "rewrite-url"
+
+# [[redirects]]
+#   from = "/*"
+#   to = "/index-b"
+#   force = true
+#   status = 200
+#   conditions = {Cookie="branch-b"}
